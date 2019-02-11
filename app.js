@@ -49,7 +49,7 @@ function addPhraseToDisplay(arr) {
     }
 }
 
-// Call functionsd created above
+// Call functions created above
 
 const phraseArray = getRandomPhraseAsArray(phrases);
     addPhraseToDisplay(phraseArray);
