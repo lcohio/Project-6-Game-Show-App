@@ -87,7 +87,7 @@ qwerty.addEventListener('click', (e) => {
 	 	    if(letterFound) {
 			    checkWin(shownLetters, letters, missed);
 	 	    } else if (!letterFound) {
-			    checklose();
+			    checkLose();
 		    }
   	}
 });
@@ -105,7 +105,7 @@ function checkWin(x, y, z) {
 	}
 };
 
-function checklose() {
+function checkLose() {
 	missed += 1;
 	const ol = scoreboard.firstElementChild;
 	let li = ol.children[missed - 1];
