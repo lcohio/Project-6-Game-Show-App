@@ -3,11 +3,13 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.querySelector('#phrase ul');
 const resetButton = document.querySelector('.btn__reset');
+const ul = document.getElementsByTagName('ul')[0];
 const title = document.querySelector('.title');
 const overlay = document.getElementById('overlay');
 const letters = document.getElementsByClassName('letter');
 const shownLetters = document.getElementsByClassName('show');
 const scoreboard = document.getElementById('scoreboard');
+const buttons = document.getElementsByTagName('button');
 
 const phrases = [
     'When in Rome',
@@ -101,7 +103,12 @@ function checkWin(x, y, z) {
 		title.innerHTML = 'YOU WIN!';
 		resetButton.innerHTML = 'Start New Game!';
 		overlay.style.display = 'block';
-		overlay.classList.add('win');
+        overlay.classList.add('win');
+        resetButton.addEventListener('click', () => {
+            if (resetButton.innerHTML === 'Start New Game!' || 'Try Again') {
+                location.reload();
+            }
+        })
 	}
 };
 
@@ -117,8 +124,16 @@ function checkLose() {
 		resetButton.innerHTML = 'Try Again';
 		overlay.style.display = 'block';
 		overlay.classList.add('lose');
-	}
+    }
+    resetButton.addEventListener('click', () => {
+        if (resetButton.innerHTML === 'Start New Game!' || 'Try Again') {
+            location.reload();
+        }
+    })
 }
+
+
+
 
 
 
